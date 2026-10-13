@@ -315,6 +315,36 @@ button, input { font: inherit; color: inherit; }
 .footer-word text { font-family: var(--display); font-weight: 700; font-size: 250px; fill: #ffffff; letter-spacing: -2px; }
 .footer-legal { grid-row: 4; font-size: var(--step-small); color: #a8a8a8; }
 
+/* ---------- Fotos ---------- */
+
+.photo { margin: 0; overflow: hidden; }
+.photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.photo figcaption { margin-top: 12px; font-size: var(--step-small); color: var(--muted); }
+
+.yard {
+  display: grid; grid-template-columns: 34vw 1fr; column-gap: 24px;
+  padding: 0 var(--margin);
+  align-items: end;
+}
+.yard-caption { grid-column: 1; grid-row: 1; font-size: var(--step-lead); line-height: 1.35; max-width: 18ch; }
+.yard-photo { grid-column: 2; grid-row: 1; aspect-ratio: 4 / 3; }
+.yard-photo img { object-position: 50% 62%; }
+
+.pair {
+  display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px;
+  padding: 0 var(--margin) var(--gap-section);
+  align-items: start;
+}
+.pair-a { grid-column: 2 / span 5; }
+.pair-b { grid-column: 8 / span 4; margin-top: 22vh; }
+.pair .photo img { aspect-ratio: 3 / 4; height: auto; }
+
+.about-row-photos { margin-top: 96px; }
+.about-photos { display: grid; grid-template-columns: 1.5fr 1fr; column-gap: 24px; align-items: end; }
+.about-photos .photo:first-child { aspect-ratio: 1 / 1; }
+.about-photos .photo:last-child { aspect-ratio: 3 / 4; }
+.about-photos .photo:last-child img { object-position: 50% 70%; }
+
 /* ---------- Bewegung ---------- */
 
 @media (prefers-reduced-motion: no-preference) {
@@ -340,6 +370,10 @@ button, input { font: inherit; color: inherit; }
   .js .fan .blade:nth-child(7) { transition-delay: 360ms; }
 
   .car .panel.is-pop { animation: pop 420ms var(--ease-out); }
+
+  /* Fotos setzen sich beim Hereinkommen aus leichter Vergrößerung */
+  .js .photo[data-reveal] img { transform: scale(1.1); transition: transform 1600ms var(--ease-out); }
+  .js .photo[data-reveal].is-in img { transform: none; }
 }
 @keyframes line-up { to { transform: none; } }
 @keyframes rise { to { opacity: 1; transform: none; } }
@@ -406,4 +440,13 @@ button, input { font: inherit; color: inherit; }
   .contact-foot { flex-direction: column; gap: 12px; }
 
   .footer-cols { grid-template-columns: 1fr 1fr; row-gap: 32px; }
+
+  .yard { display: flex; flex-direction: column-reverse; align-items: stretch; gap: 16px; padding: 0; }
+  .yard-caption { padding: 0 var(--margin); }
+  .pair { display: flex; flex-direction: column; gap: 32px; }
+  .pair-b { margin: 0 0 0 18vw; }
+  .about-row-photos > span { display: none; }
+  .about-row-photos { margin-top: 56px; }
+  .about-photos { grid-template-columns: 1fr; row-gap: 16px; }
+  .about-photos .photo:last-child { width: 70%; justify-self: end; }
 }
