@@ -31,20 +31,27 @@
 <body>
   <a class="skip" href="#inhalt">Zum Inhalt springen</a>
 
-  <div class="page">
-    <header class="top">
+  <div class="curtain" aria-hidden="true"><span class="curtain-word">Pronkin</span></div>
+
+  <header class="top">
+    <div class="top-left">
       <a class="wordmark" href="#start">Pronkin</a>
-      <nav class="top-links" aria-label="Hauptnavigation">
-        <a href="#leistungen">Leistungen</a>
-        <a href="#schaden">Schaden melden</a>
-        <a href="#kontakt">Kontakt</a>
-      </nav>
-      <a class="top-menu" href="#kontakt">Kontakt</a>
-    </header>
+      <span class="top-time">Pocking <time class="js-clock"></time></span>
+    </div>
+    <nav class="top-links" aria-label="Hauptnavigation">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#schaden">Schaden melden</a>
+      <a href="#fragen">Fragen</a>
+    </nav>
+    <a class="top-call" href="tel:+4915901760716">Anrufen</a>
+  </header>
+
+  <div class="page">
 
     <main id="inhalt">
       <!-- Erster Bildschirm: was, wo, anrufen -->
-      <section class="hero" id="start">
+      <section class="hero" id="start" data-ink="#0a0a0a">
         <h1 class="hero-title lines">
           <span class="line"><span data-line style="--i:0">KFZ-Service</span></span>
           <span class="line line-right"><span data-line style="--i:1">in Pocking.</span></span>
@@ -56,7 +63,7 @@
       </section>
 
       <!-- Der Hof: das erste Foto -->
-      <section class="yard" aria-label="Der Betrieb">
+      <section class="yard" aria-label="Der Betrieb" data-ink="#ffffff">
         <p class="yard-caption" data-reveal>Vor der Werkstatt an der Oberen Römerstraße&nbsp;11 in Pocking.</p>
         <figure class="photo yard-photo" data-reveal>
           <img src="img/hof.webp" width="1020" height="1020" alt="Hof vor der Werkstatt mit einem dunkelroten Mercedes und einem weißen BMW vor dem Gebäude">
@@ -64,11 +71,11 @@
       </section>
 
       <!-- Leistungen: eine Liste mit Farbpunkten, daneben der Farbtonfächer -->
-      <section class="services" id="leistungen">
+      <section class="services" id="leistungen" data-ink="#0a0a0a">
         <div class="services-list">
           <h2 class="services-title" data-reveal>Leistungen</h2>
 
-          <div class="group" data-reveal>
+          <div class="group" data-reveal data-blade="5">
             <p class="group-name">Lack</p>
             <ul class="rows">
               <li><span class="dot dot-red"></span><span class="row-name">Kratzer ausbessern</span><span class="row-value">Spot-Repair</span></li>
@@ -79,7 +86,7 @@
             </ul>
           </div>
 
-          <div class="group" data-reveal>
+          <div class="group" data-reveal data-blade="4">
             <p class="group-name">Wartung</p>
             <ul class="rows">
               <li><span class="dot dot-blue"></span><span class="row-name">Inspektion</span><span class="row-value">nach Herstellervorgabe</span></li>
@@ -90,7 +97,7 @@
             </ul>
           </div>
 
-          <div class="group" data-reveal>
+          <div class="group" data-reveal data-blade="6">
             <p class="group-name">Reinigung</p>
             <ul class="rows">
               <li><span class="dot dot-ink"></span><span class="row-name">Handwäsche außen</span><span class="row-value">schonend</span></li>
@@ -118,19 +125,26 @@
       </section>
 
       <!-- Zwei Autos, zwei Lackfarben -->
-      <section class="pair" aria-label="Aus der Werkstatt">
+      <section class="pair" aria-label="Aus der Werkstatt" data-ink="#0a0a0a">
         <figure class="photo pair-a" data-reveal>
           <img src="img/rot-halle.webp" width="765" height="1020" loading="lazy" alt="Rotes Auto in der Werkstatthalle, daneben ein Rangierwagenheber">
           <figcaption>In der Halle.</figcaption>
         </figure>
         <figure class="photo pair-b" data-reveal>
           <img src="img/a-klasse.webp" width="765" height="1020" loading="lazy" alt="Schwarze Mercedes A-Klasse mit glänzendem Lack vor dem Haus">
-          <figcaption>Schwarzer Lack, wieder mit Glanz.</figcaption>
         </figure>
       </section>
 
+      <!-- Laufband: was hier passiert, sehr groß -->
+      <section class="band" aria-hidden="true" data-ink="#ffffff">
+        <div class="band-track">
+          <span>Lack</span><span class="band-red">Wartung</span><span>Pflege</span><span class="band-red">Pocking</span>
+          <span>Lack</span><span class="band-red">Wartung</span><span>Pflege</span><span class="band-red">Pocking</span>
+        </div>
+      </section>
+
       <!-- Ablauf: vier Sätze als Treppe, blaues Feld -->
-      <section class="steps" id="ablauf" aria-label="So läuft es ab">
+      <section class="steps" id="ablauf" aria-label="So läuft es ab" data-ink="#ffffff">
         <ol class="stairs">
           <li data-reveal><h3 class="stair-line">Zuerst das Foto.</h3><p class="stair-note">Sie schicken es per SMS oder WhatsApp an 01590&nbsp;1760716. Ein Bild aus einem Meter Abstand, eins aus der Nähe.</p></li>
           <li data-reveal><h3 class="stair-line">Dann der Preis.</h3><p class="stair-note">Wir melden uns mit einer Einschätzung. Bei Lackschäden meist schon anhand der Bilder, sonst nach einem kurzen Blick vor Ort.</p></li>
@@ -140,7 +154,7 @@
       </section>
 
       <!-- Das eine Werkzeug: Schaden am Auto antippen, Nachricht vorbereiten -->
-      <section class="report" id="schaden">
+      <section class="report" id="schaden" data-ink="#0a0a0a">
         <div class="report-head" data-reveal>
           <h2 class="report-title">Wo ist der Schaden?</h2>
           <p class="report-lede">Tippen Sie die Stelle am Auto an und wählen Sie, was passiert ist. Daraus wird eine fertige Nachricht an uns, das Foto hängen Sie selbst an.</p>
@@ -162,10 +176,12 @@
             <g class="wheel">
               <circle class="tyre" cx="232" cy="306" r="62"/>
               <circle class="panel rim" data-part="Felge vorn" tabindex="0" role="button" aria-label="Felge vorn" cx="232" cy="306" r="38"/>
+              <g class="spokes" pointer-events="none"><path d="M232 270 L232 342 M211 285 L253 327 M253 285 L211 327"/><circle cx="232" cy="306" r="8"/></g>
             </g>
             <g class="wheel">
               <circle class="tyre" cx="800" cy="306" r="62"/>
               <circle class="panel rim" data-part="Felge hinten" tabindex="0" role="button" aria-label="Felge hinten" cx="800" cy="306" r="38"/>
+              <g class="spokes" pointer-events="none"><path d="M800 270 L800 342 M779 285 L821 327 M821 285 L779 327"/><circle cx="800" cy="306" r="8"/></g>
             </g>
           </svg>
         </div>
@@ -215,7 +231,7 @@
       </section>
 
       <!-- Über den Betrieb -->
-      <section class="about" id="betrieb" aria-label="Über den Betrieb">
+      <section class="about" id="betrieb" aria-label="Über den Betrieb" data-ink="#0a0a0a">
         <div class="about-row">
           <dl class="facts" data-reveal>
             <div><dt>Adresse</dt><dd>Obere Römerstraße 11<br>94060 Pocking</dd></div>
@@ -261,7 +277,7 @@
       </section>
 
       <!-- Fragen -->
-      <section class="faq" id="fragen">
+      <section class="faq" id="fragen" data-ink="#0a0a0a">
         <h2 class="faq-title" data-reveal>Was Kunden vorher fragen</h2>
         <div class="faq-list">
           <details data-reveal>
@@ -292,7 +308,7 @@
       </section>
 
       <!-- Kontakt: die Telefonnummer als große Zeile auf rotem Feld -->
-      <section class="contact" id="kontakt" aria-label="Kontakt">
+      <section class="contact" id="kontakt" aria-label="Kontakt" data-ink="#0a0a0a">
         <p class="contact-lede" data-reveal>Rufen Sie an oder schicken Sie ein Foto vom Schaden.</p>
         <a class="contact-number" href="tel:+4915901760716" data-reveal>01590 1760716</a>
         <div class="contact-foot">
@@ -303,7 +319,7 @@
     </main>
   </div>
 
-  <footer class="footer">
+  <footer class="footer" data-ink="#ffffff">
     <div class="footer-cols">
       <div>
         <p class="footer-head">Adresse</p>
@@ -328,6 +344,9 @@
     <p class="footer-legal">© 2026 KFZ Service Reinigungs- und Wartungsdienst Pronkin · <a href="#impressum">Impressum</a> · <a href="#datenschutz">Datenschutz</a></p>
   </footer>
 
+  <script src="vendor/gsap.min.js" defer></script>
+  <script src="vendor/ScrollTrigger.min.js" defer></script>
+  <script src="vendor/lenis.min.js" defer></script>
   <script src="script.js" defer></script>
 </body>
 </html>
