@@ -30,13 +30,19 @@ const hasGsap = !!(window.gsap && window.ScrollTrigger);
 
 (() => {
   const header = document.querySelector('.top');
-  const chapters = document.querySelectorAll('[data-ink]');
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => {
-      for (const e of entries) if (e.isIntersecting) document.documentElement.style.setProperty('--header-ink', e.target.dataset.ink);
-    }, { rootMargin: '0px 0px -94% 0px', threshold: 0 });
-    chapters.forEach((el) => io.observe(el));
-  }
+  // Der Footer liegt immer hinter der Seite, also zählt nur, welcher Abschnitt
+  // der Seite gerade unter der Kopfzeile liegt. Liegt keiner dort, ist es der Footer.
+  const chapters = [...document.querySelectorAll('.page [data-ink]')];
+  const footerInk = document.querySelector('.footer').dataset.ink;
+  let ink = '';
+  const setInk = () => {
+    const probe = header.offsetHeight / 2;
+    const under = chapters.find((el) => { const r = el.getBoundingClientRect(); return r.top <= probe && r.bottom > probe; });
+    const next = under ? under.dataset.ink : footerInk;
+    if (next !== ink) { ink = next; document.documentElement.style.setProperty('--header-ink', ink); }
+  };
+  setInk();
+  addEventListener('resize', setInk);
 
   const clock = document.querySelector('.js-clock');
   const fmt = new Intl.DateTimeFormat('de-DE', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Berlin' });
@@ -50,6 +56,7 @@ const hasGsap = !!(window.gsap && window.ScrollTrigger);
     const y = scrollY;
     header.classList.toggle('is-hidden', y > last && y > innerHeight * 0.6);
     last = y;
+    setInk();
   }, { passive: true });
 })();
 
@@ -100,7 +107,7 @@ if (hasGsap && !reduced) {
   gsap.timeline({ onComplete: () => curtain.remove() })
     .from('.curtain-word', { yPercent: 100, duration: 0.6, ease: 'expo.out' })
     .to(curtain, { yPercent: -100, duration: 0.8, ease: 'expo.inOut' }, '+=0.15')
-    .from('.top', { yPercent: -100, duration: 0.6, ease: 'expo.out' }, '-=0.3');
+    .fromTo('.top', { yPercent: -100 }, { yPercent: 0, duration: 0.6, ease: 'expo.out', clearProps: 'transform' }, '-=0.3');
 
   const mm = gsap.matchMedia();
 

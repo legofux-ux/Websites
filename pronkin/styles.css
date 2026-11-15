@@ -10,6 +10,7 @@
   --accent-ink: #ffffff;
   --blue: #2436ff;
   --red: #ff3b1f;
+  --green: #00994a;
   --black: #0a0a0a;
   --navy: #050a5c;
 
@@ -67,11 +68,11 @@ button, input { font: inherit; color: inherit; }
   padding: 22px var(--margin);
   font-size: var(--step-small);
   color: var(--header-ink, var(--ink));
-  transition: color 300ms var(--ease-out), transform 500ms var(--ease-out);
+  transition: color 300ms var(--ease-out), translate 500ms var(--ease-out);
   pointer-events: none;
 }
 .top > * { pointer-events: auto; }
-.top.is-hidden { transform: translateY(-110%); }
+.top.is-hidden { translate: 0 -110%; }
 .top-left { display: flex; align-items: baseline; gap: 20px; }
 .top-time { font-variant-numeric: tabular-nums; opacity: 0.75; }
 .top-call { justify-self: end; font-weight: 500; text-decoration: none; position: relative; }
@@ -122,6 +123,7 @@ button, input { font: inherit; color: inherit; }
   font-family: var(--display); font-weight: 700; text-transform: uppercase;
   font-size: clamp(4rem, 13.5vw, 16rem);
   line-height: 0.86; letter-spacing: -0.02em;
+  color: var(--green);
 }
 .lines .line { display: block; overflow: hidden; padding-bottom: 0.06em; margin-bottom: -0.06em; }
 .lines [data-line] { display: block; }
