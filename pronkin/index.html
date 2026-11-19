@@ -161,26 +161,42 @@
       <section class="report" id="schaden" data-ink="#0a0a0a">
         <div class="report-car" data-reveal>
           <svg class="car" viewBox="0 0 1000 380" role="group" aria-label="Seitenansicht eines Autos, Bauteile zum Antippen">
-            <path class="panel" data-part="Dach" tabindex="0" role="button" aria-label="Dach" d="M432 94 Q446 82 476 80 L736 80 Q758 82 766 94 Z"/>
-            <path class="glass" d="M352 168 L440 100 L534 100 L534 168 Z"/>
-            <path class="glass" d="M548 168 L548 100 L744 100 L836 168 Z"/>
-            <path class="pillar" d="M342 172 L432 92 L440 100 L352 168 Z M534 100 L548 100 L548 168 L534 168 Z M744 100 L764 94 L862 172 L836 168 Z"/>
-            <path class="panel" data-part="Motorhaube" tabindex="0" role="button" aria-label="Motorhaube" d="M58 214 Q70 192 130 186 L342 172 L342 186 L120 208 Z"/>
-            <path class="panel" data-part="Stoßfänger vorn" tabindex="0" role="button" aria-label="Stoßfänger vorn" d="M120 208 L120 312 L58 312 Q40 310 40 292 L40 246 Q42 220 58 214 Z"/>
-            <path class="panel" data-part="Kotflügel vorn" tabindex="0" role="button" aria-label="Kotflügel vorn" d="M120 208 L342 186 Q336 250 346 306 L120 306 Z"/>
-            <path class="panel" data-part="Tür vorn" tabindex="0" role="button" aria-label="Tür vorn" d="M342 172 L540 172 L540 306 L346 306 Q334 250 342 172 Z"/>
-            <path class="panel" data-part="Tür hinten" tabindex="0" role="button" aria-label="Tür hinten" d="M540 172 L736 172 Q746 240 730 306 L540 306 Z"/>
-            <path class="panel" data-part="Seitenwand hinten" tabindex="0" role="button" aria-label="Seitenwand hinten" d="M736 172 L862 172 Q906 178 916 206 L916 306 L730 306 Q746 240 736 172 Z"/>
-            <path class="panel" data-part="Stoßfänger hinten" tabindex="0" role="button" aria-label="Stoßfänger hinten" d="M916 214 Q954 220 960 250 L960 300 Q958 312 944 312 L916 312 Z"/>
-            <g class="wheel">
-              <circle class="tyre" cx="232" cy="306" r="62"/>
-              <circle class="panel rim" data-part="Felge vorn" tabindex="0" role="button" aria-label="Felge vorn" cx="232" cy="306" r="38"/>
-              <g class="spokes" pointer-events="none"><path d="M232 270 L232 342 M211 285 L253 327 M253 285 L211 327"/><circle cx="232" cy="306" r="8"/></g>
+            <ellipse class="ground" cx="500" cy="366" rx="460" ry="9"/>
+            <!-- Radkästen -->
+            <path class="arch" d="M154 300 A76 76 0 0 1 306 300 Z M714 300 A76 76 0 0 1 866 300 Z"/>
+            <!-- Fensterrahmen und Scheiben -->
+            <path class="frame" d="M332 168 L458 96 Q476 82 514 80 L716 80 Q758 82 782 104 L886 166 L344 181 Z"/>
+            <path class="glass" d="M378 176 L470 110 Q482 102 500 102 L552 102 L556 174 Z"/>
+            <path class="glass" d="M574 173 L572 102 L712 102 Q742 104 760 118 L836 168 Z"/>
+            <!-- Bauteile -->
+            <path class="panel" data-part="Dach" tabindex="0" role="button" aria-label="Dach" d="M450 106 Q468 76 514 72 L718 72 Q766 74 792 104 L776 110 Q752 88 716 88 L514 88 Q482 90 466 112 Z"/>
+            <path class="panel" data-part="Motorhaube" tabindex="0" role="button" aria-label="Motorhaube" d="M58 214 Q72 196 112 190 L338 166 L344 180 L112 202 Q80 206 58 214 Z"/>
+            <path class="panel" data-part="Stoßfänger vorn" tabindex="0" role="button" aria-label="Stoßfänger vorn" d="M58 214 Q80 206 112 202 L116 300 Q116 306 110 306 L60 306 Q46 304 44 290 L40 254 Q40 228 58 214 Z"/>
+            <path class="panel" data-part="Kotflügel vorn" tabindex="0" role="button" aria-label="Kotflügel vorn" d="M112 202 L344 180 L350 300 L306 300 A76 76 0 0 0 154 300 L116 300 Z"/>
+            <path class="panel" data-part="Tür vorn" tabindex="0" role="button" aria-label="Tür vorn" d="M344 180 L562 175 L562 300 L350 300 Z"/>
+            <path class="panel" data-part="Tür hinten" tabindex="0" role="button" aria-label="Tür hinten" d="M562 175 L716 171 Q722 236 714 300 L562 300 Z"/>
+            <path class="panel" data-part="Seitenwand hinten" tabindex="0" role="button" aria-label="Seitenwand hinten" d="M716 171 L886 166 Q918 172 930 196 L930 300 L866 300 A76 76 0 0 0 714 300 Q722 236 716 171 Z"/>
+            <path class="panel" data-part="Stoßfänger hinten" tabindex="0" role="button" aria-label="Stoßfänger hinten" d="M930 196 Q954 204 960 230 L962 288 Q960 306 942 306 L930 306 Z"/>
+            <!-- Details -->
+            <g class="details" pointer-events="none">
+              <path class="crease" d="M120 236 Q520 222 926 222"/>
+              <path class="sill" d="M306 296 L714 296 L712 310 L308 310 Z"/>
+              <path class="lamp" d="M60 222 Q74 210 106 206 L108 222 Q84 226 64 234 Z"/>
+              <path class="tail" d="M932 200 Q952 208 958 228 L932 230 Z"/>
+              <path class="mirror" d="M362 182 Q352 164 370 156 L404 154 Q414 158 412 172 L392 184 Z"/>
+              <rect class="handle" x="486" y="194" width="44" height="9" rx="4.5"/>
+              <rect class="handle" x="664" y="190" width="44" height="9" rx="4.5"/>
+              <rect class="cap" x="806" y="186" width="30" height="22" rx="5"/>
             </g>
             <g class="wheel">
-              <circle class="tyre" cx="800" cy="306" r="62"/>
-              <circle class="panel rim" data-part="Felge hinten" tabindex="0" role="button" aria-label="Felge hinten" cx="800" cy="306" r="38"/>
-              <g class="spokes" pointer-events="none"><path d="M800 270 L800 342 M779 285 L821 327 M821 285 L779 327"/><circle cx="800" cy="306" r="8"/></g>
+              <circle class="tyre" cx="230" cy="300" r="62"/>
+              <circle class="panel rim" data-part="Felge vorn" tabindex="0" role="button" aria-label="Felge vorn" cx="230" cy="300" r="42"/>
+              <g class="spokes" pointer-events="none"><path d="M230 300 L230.0 266.0 M230 300 L262.3 289.5 M230 300 L250.0 327.5 M230 300 L210.0 327.5 M230 300 L197.7 289.5"/><circle cx="230" cy="300" r="9"/></g>
+            </g>
+            <g class="wheel">
+              <circle class="tyre" cx="790" cy="300" r="62"/>
+              <circle class="panel rim" data-part="Felge hinten" tabindex="0" role="button" aria-label="Felge hinten" cx="790" cy="300" r="42"/>
+              <g class="spokes" pointer-events="none"><path d="M790 300 L790.0 266.0 M790 300 L822.3 289.5 M790 300 L810.0 327.5 M790 300 L770.0 327.5 M790 300 L757.7 289.5"/><circle cx="790" cy="300" r="9"/></g>
             </g>
           </svg>
         </div>

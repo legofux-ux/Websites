@@ -235,16 +235,24 @@ button, input { font: inherit; color: inherit; }
 .report-car { grid-column: 1 / span 7; grid-row: 1; align-self: end; }
 .car { width: 100%; height: auto; display: block; overflow: visible; }
 .car .panel {
-  fill: #ffffff; stroke: var(--ink); stroke-width: 4; stroke-linejoin: round;
+  fill: #ffffff; stroke: var(--ink); stroke-width: 3; stroke-linejoin: round;
   cursor: pointer; transition: fill 180ms var(--ease-out);
   outline: none;
 }
 .car .panel:hover, .car .panel:focus-visible { fill: #c9cdff; }
 .car .panel.is-on { fill: var(--red); }
+.car .ground { fill: #e2e2e2; }
+.car .arch { fill: #1d1d1d; }
+.car .frame { fill: var(--ink); }
 .car .glass { fill: var(--navy); }
-.car .pillar { fill: var(--ink); }
 .car .tyre { fill: var(--ink); }
 .car .rim { stroke-width: 3; }
+.car .crease { fill: none; stroke: var(--ink); stroke-width: 2; opacity: 0.3; }
+.car .sill { fill: var(--ink); }
+.car .lamp { fill: #eef0ff; stroke: var(--ink); stroke-width: 3; stroke-linejoin: round; }
+.car .tail { fill: var(--red); stroke: var(--ink); stroke-width: 3; stroke-linejoin: round; }
+.car .mirror { fill: #ffffff; stroke: var(--ink); stroke-width: 3; stroke-linejoin: round; }
+.car .handle, .car .cap { fill: none; stroke: var(--ink); stroke-width: 2.5; }
 
 .report-form { grid-column: 9 / span 4; grid-row: 1 / span 2; display: flex; flex-direction: column; gap: 28px; }
 .choice { border: 0; margin: 0; padding: 0; }
@@ -520,6 +528,6 @@ button, input { font: inherit; color: inherit; }
 }
 
 /* Speichen, damit man das Rad drehen sieht */
-.car .spokes path { stroke: var(--ink); stroke-width: 5; stroke-linecap: round; fill: none; }
+.car .spokes path { stroke: var(--ink); stroke-width: 6; stroke-linecap: round; fill: none; }
 .car .spokes circle { fill: var(--ink); }
 .car .rim.is-on + .spokes path { stroke: var(--ink); }
