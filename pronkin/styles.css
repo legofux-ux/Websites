@@ -418,7 +418,8 @@ button, input { font: inherit; color: inherit; }
 
 .about-row-photos { margin-top: 96px; }
 .about-photos { display: grid; grid-template-columns: 1.5fr 1fr; column-gap: 24px; align-items: end; }
-.about-photos .photo:first-child { aspect-ratio: 1 / 1; }
+.about-photos .photo:first-child { overflow: visible; }
+.about-photos .photo:first-child .crop { overflow: hidden; aspect-ratio: 1 / 1; }
 .about-photos .photo:last-child { aspect-ratio: 3 / 4; }
 .about-photos .photo:last-child img { object-position: 50% 70%; }
 
