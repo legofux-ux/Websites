@@ -329,7 +329,7 @@ button, input { font: inherit; color: inherit; }
 /* ---------- Kontakt ---------- */
 
 .contact {
-  background: var(--red); color: var(--ink);
+  background: var(--green); color: var(--ink);
   min-height: 100svh;
   padding: 48px var(--margin) 36px;
   display: grid; grid-template-rows: auto 1fr auto auto;
