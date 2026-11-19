@@ -188,7 +188,7 @@ button, input { font: inherit; color: inherit; }
 
 .fan { grid-column: 3; position: sticky; top: 12svh; justify-self: end; width: 100%; max-width: 420px; }
 .fan-svg { width: 100%; height: auto; display: block; overflow: visible; }
-.fan-svg text { font-family: var(--text); font-size: 22px; font-weight: 500; fill: var(--ink); }
+.fan-svg text { font-family: var(--text); font-size: 22px; font-weight: 600; }
 .blade { transform: rotate(var(--r)); transition: transform 1200ms var(--ease-out), opacity 500ms var(--ease-out); }
 .blade > * { transition: transform 600ms var(--ease-out); }
 .fan.has-focus .blade { opacity: 0.28; }
